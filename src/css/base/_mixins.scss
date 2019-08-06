@@ -1,0 +1,142 @@
+// =============================================================================
+// Global
+// =============================================================================
+
+@mixin clear {
+  background: none;
+  border: none;
+  &:focus {
+    outline: none;
+  }
+}
+
+// =============================================================================
+// Media Queries
+// =============================================================================
+
+$extra-small: 320px;
+$small: 375px;
+$medium: 768px;
+$large: 1024px;
+$large-plus: 1300px;
+$extra-large: 1440px;
+$extra-large-2: 1450px;
+$retina: 1800px;
+$retina-plus: 1920px;
+
+@mixin xs-query {
+  @media screen and (max-width: $extra-small) {
+    @content;
+  }
+}
+
+@mixin s-query {
+  @media screen and (min-width: $small) {
+    @content;
+  }
+}
+
+@mixin m-query {
+  @media screen and (min-width: $medium) {
+    @content;
+  }
+}
+
+@mixin l-query {
+  @media screen and (min-width: $large) {
+    @content;
+  }
+}
+
+@mixin ll-query {
+  @media screen and (min-width: $large-plus) {
+    @content;
+  }
+}
+
+@mixin xl-query {
+  @media screen and (min-width: $extra-large) {
+    @content;
+  }
+}
+
+@mixin xl2-query {
+  @media screen and (min-width: $extra-large-2) {
+    @content;
+  }
+}
+
+@mixin xxl-query {
+  @media screen and (min-width: $retina) {
+    @content;
+  }
+}
+@mixin xxxl-query {
+  @media screen and (min-width: $retina-plus) {
+    @content;
+  }
+}
+
+// =============================================================================
+// String Replace
+// =============================================================================
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+
+  @return $string;
+}
+
+// =============================================================================
+// Font Face
+// =============================================================================
+
+@mixin font(
+  $name,
+  $path,
+  $weight: null,
+  $style: null,
+  $exts: eot woff2 woff ttf svg
+) {
+  $src: null;
+
+  $extmods: (
+    eot: "?",
+    svg: "#" + str-replace($name, " ", "_")
+  );
+
+  $formats: (
+    otf: "opentype",
+    ttf: "truetype"
+  );
+
+  @each $ext in $exts {
+    $extmod: if(
+      map-has-key($extmods, $ext),
+      $ext + map-get($extmods, $ext),
+      $ext
+    );
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext);
+    $src: append(
+      $src,
+      url(quote($path + "." + $extmod)) format(quote($format)),
+      comma
+    );
+  }
+
+  @font-face {
+    font-family: quote($name);
+    font-style: $style;
+    font-weight: $weight;
+    src: $src;
+  }
+}

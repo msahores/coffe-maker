@@ -1,0 +1,405 @@
+#programs {
+  margin-top: 317px;
+  @include s-query {
+    margin-top: 244px;
+  }
+  @include m-query {
+    margin-top: 350px;
+  }
+  @include l-query {
+    display: flex;
+    margin-top: 164px;
+    position: initial;
+  }
+  .top {
+    h2 {
+      @include s-query {
+        background: url($image_url+"programs-star.png") no-repeat 9% 30%,
+          url($image_url+"programs-star.png") no-repeat 91% 30%;
+        background-size: 12px;
+      }
+      @include m-query {
+        background-position: 0% 30%, 100% 30%;
+        background-size: 20px;
+      }
+      @include l-query {
+        background-position-y: 50%;
+        position: initial;
+        padding: 0;
+        transform: translateX(0%);
+        background-position: 17px 50%, 301px 50%;
+      }
+      @include ll-query {
+        background-position: 0% 30%, 100% 30%;
+        background-size: 11px;
+      }
+      @include xl-query {
+        background-position: 4% 46%, 95.5% 44%;
+      }
+    }
+    p {
+      color: $grey-dark;
+      text-align: center;
+      @include m-query {
+        margin-top: 20px;
+        font-size: 11.7px;
+      }
+      @include l-query {
+        margin-top: -12px;
+      }
+    }
+  }
+  .types {
+    margin-top: 32px;
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    border-bottom: 1px solid $grey-alpha;
+    padding-bottom: 15px;
+    font-family: "Intro";
+    @include m-query {
+      margin-top: 60px;
+      border-bottom-width: 1px;
+      width: 60%;
+      padding-bottom: 17px;
+    }
+    @include l-query {
+      margin-top: 77px;
+      padding-bottom: 26px;
+      width: 715px;
+    }
+
+    li {
+      a {
+        color: $grey-soft;
+        font-size: 0.8rem;
+        text-decoration: none;
+        font-weight: bold;
+        @include s-query {
+          font-size: 1.2rem;
+        }
+        @include m-query {
+          padding-bottom: 15px;
+        }
+        @include l-query {
+          font-size: 15px;
+          padding: 0px 72px 25px 99px;
+        }
+      }
+      .selected {
+        color: $black;
+        @include m-query {
+          height: 43px;
+          border-bottom: 3px solid $black;
+        }
+      }
+    }
+  }
+  .program {
+    display: none;
+    .top {
+      position: relative;
+      display: flex;
+      width: 60%;
+      margin: 20px auto;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 10;
+      @include m-query {
+        width: 90%;
+        margin: 40px;
+        flex-direction: row;
+        justify-content: space-between;
+      }
+      @include l-query {
+        display: block;
+        height: 260px;
+        margin: 74px auto 20px;
+        width: 892px;
+        @include xl-query {
+          width: 895px;
+        }
+      }
+
+      img {
+        width: 331px;
+        @include m-query {
+          width: 59%;
+        }
+        @include l-query {
+          position: initial;
+          float: left;
+          margin: 0;
+          width: 485px;
+        }
+      }
+
+      .details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        width: 330px;
+        height: 269px;
+        @include m-query {
+          height: 270px;
+          align-items: flex-start;
+          width: initial;
+        }
+        @include l-query {
+          width: 40%;
+          display: block;
+          height: initial;
+          padding: 0;
+          float: left;
+          margin: 9px 0px 0px 43px;
+        }
+
+        h3 {
+          font-weight: bold;
+          font-size: 40px;
+          font-family: "PlayFairDisplay";
+          @include m-query {
+            font-size: 37px;
+          }
+          @include l-query {
+            font-size: 44px;
+            margin-top: 10px;
+          }
+          &:first-child {
+            color: rgba(100, 100, 100, 1);
+            margin-top: 22px;
+            font-size: 24px;
+            font-weight: bold;
+            @include l-query {
+              margin-top: 0px;
+              position: initial;
+            }
+          }
+        }
+
+        .icon {
+          padding: 11px 0px 11px 34px;
+          font-size: 13px;
+          margin-bottom: 5px;
+        }
+
+        .one {
+          background: url($image_url+"programs-form.png") no-repeat 0% 50%;
+          margin-top: 20px;
+          @include m-query {
+            margin-top: 5px;
+          }
+          @include l-query {
+            margin-top: 45px;
+          }
+        }
+
+        .two {
+          background: url($image_url+"programs-clock.png") no-repeat 0% 50%;
+        }
+
+        button {
+          background-color: $black;
+          color: white;
+          width: 250px;
+          padding: 20px;
+          border: none;
+          margin-top: 20px;
+          @include m-query {
+            margin-top: initial;
+            width: 197px;
+          }
+          @include l-query {
+            width: 187px;
+            padding: 0;
+            height: 43px;
+            margin-top: 22px;
+          }
+        }
+      }
+
+      .bg {
+        color: rgba(200, 200, 200, 0.2);
+        font-family: "Intro";
+        font-size: 10rem;
+        font-weight: bold;
+        height: 400px;
+        position: absolute;
+        top: 279px;
+        z-index: -1;
+        pointer-events: none;
+        font-size: 4rem;
+        transform: rotateZ(-6deg);
+
+        @include m-query {
+          width: initial;
+          height: initial;
+          font-size: 10rem;
+          left: 50%;
+          transform: rotateZ(-7deg);
+          transform: translateX(-50%);
+          top: -80px;
+        }
+        @include l-query {
+          height: 400px;
+          font-size: 151px;
+          top: -52px;
+          right: -5px;
+          left: initial;
+          transform: none;
+        }
+        @include xl-query {
+        }
+      }
+    }
+    .details_description {
+      font-family: "Intro";
+
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+      margin: 70px 0px 0px 40px;
+
+      padding: 0;
+
+      @include l-query {
+        justify-content: space-between;
+        margin: 75px 0px 0px 0px;
+        width: 100%;
+      }
+      @include xl-query {
+        width: 843px;
+      }
+
+      .detail_item {
+        border-top: 1px solid black;
+        width: 80%;
+        margin: 20px;
+        @include m-query {
+          width: 40%;
+        }
+        @include l-query {
+          margin: 0;
+          width: initial;
+        }
+        @include ll-query {
+        }
+
+        h4 {
+          font-size: 12px;
+          text-transform: uppercase;
+          font-family: "Intro";
+          font-weight: bold;
+          margin-bottom: 30px;
+          line-height: 1.5em;
+          letter-spacing: 1px;
+          @include m-query {
+            margin-bottom: 2rem;
+          }
+          @include l-query {
+            margin-bottom: 3rem;
+          }
+        }
+        .one {
+          padding-top: 32px;
+          margin-bottom: 27px;
+        }
+        .two {
+          padding-top: 50px;
+          margin-bottom: 29px;
+        }
+        .three {
+          padding-top: 12px;
+          margin-bottom: 31px;
+        }
+        ul {
+          display: flex;
+          flex-direction: column;
+          font-family: "MinionPro";
+          li {
+            font-size: 11.5px;
+            margin-bottom: 16px;
+            text-transform: initial;
+            @include l-query {
+              margin-bottom: 16px;
+            }
+          }
+        }
+      }
+    }
+    .table-container {
+      width: 80%;
+      margin: 50px auto;
+
+      @include m-query {
+        margin: 0 auto;
+      }
+      @include l-query {
+        margin: 37px auto;
+        width: 702px;
+      }
+      @include ll-query {
+        margin: 0px auto;
+      }
+      @include xl-query {
+        margin: 32px 0px;
+      }
+      h4 {
+        margin: 18px 0px;
+        text-transform: uppercase;
+        font-family: "Intro";
+        font-weight: bold;
+        @include m-query {
+          font-size: 13.5px;
+        }
+        @include ll-query {
+          margin: 15px 0px;
+        }
+        @include xl-query {
+          margin: 18px 0px;
+        }
+      }
+      table {
+        border: 1px solid black;
+        tr {
+          border: 1px solid black;
+          td {
+            border: 1px solid black;
+            padding: 1em;
+            @include m-query {
+            }
+            @include l-query {
+              padding: 9px;
+            }
+            @include ll-query {
+              padding: 6px;
+            }
+            @include xl-query {
+              padding: 9px;
+            }
+          }
+          .yes {
+            background: url($image_url+"programs-yes.png") no-repeat 50% 50%;
+            background-size: 12px;
+            width: 19px;
+          }
+          .no {
+            background: url($image_url+"programs-no.png") no-repeat 50% 50%;
+            background-size: 13px;
+            width: 19px;
+          }
+          .desc {
+            width: 468px;
+            font-size: 11.8px;
+          }
+        }
+      }
+    }
+  }
+
+  .visible {
+    display: block;
+  }
+}

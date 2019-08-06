@@ -1,0 +1,126 @@
+#questions {
+  margin: 100px 0px 0px 0px;
+
+  @include ll-query() {
+    margin: 210px 0px 0px 758px;
+    display: block;
+    padding-bottom: 300px;
+    margin-left: 590px;
+  }
+
+  @include xxl-query() {
+    margin-left: 779px;
+    margin-top: 334px;
+  }
+  .container {
+    background-color: $shadow;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-around;
+    padding-top: 30px;
+    @include l-query() {
+      background-image: linear-gradient(white, rgba(250, 250, 250, 0.5));
+    }
+    @include ll-query() {
+      background-color: none;
+      display: initial;
+      width: initial;
+      margin: 0;
+      padding-top: 0px;
+    }
+    h2 {
+      text-align: initial;
+      border-bottom: 1px solid $grey-hard;
+      padding-bottom: 20px;
+      margin: 20px 0px;
+
+      @include ll-query() {
+        padding-bottom: 2px;
+        float: left;
+        width: 578px;
+      }
+    }
+
+    span {
+      width: 60%;
+      text-align: center;
+
+      @include m-query() {
+      }
+      @include l-query() {
+        float: left;
+        clear: both;
+        text-align: left;
+        width: initial;
+        font-size: 12px;
+      }
+    }
+
+    form {
+      display: flex;
+      clear: both;
+      margin: 50px auto;
+      flex-direction: column;
+      float: left;
+      @include m-query() {
+        margin: 100px auto;
+      }
+      @include ll-query() {
+        margin: 83px auto;
+        width: 595px;
+        flex-direction: row;
+        align-items: flex-end;
+      }
+      .inputs {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        font-family: "Intro";
+        font-weight: bold;
+        height: 131px;
+        @include m-query() {
+          width: 387px;
+        }
+        @include l-query() {
+          width: 430px;
+          height: 86px;
+        }
+
+        input {
+          font-size: 10px;
+          @include clear();
+          border-bottom: 1px solid $grey-hard;
+          padding-bottom: 20px;
+          font-weight: bold;
+          @include ll-query() {
+            padding-bottom: 9px;
+          }
+        }
+      }
+      button {
+        cursor: pointer;
+        @include clear();
+        margin-bottom: 10px;
+        background: url($image_url+"form_send.png") no-repeat;
+        width: 200px;
+        height: 41px;
+        align-self: flex-end;
+        background-size: 200px;
+        margin-top: 50px;
+        @include ll-query() {
+          margin-bottom: 1px;
+          margin-left: 40px;
+          margin-top: 0px;
+        }
+        @include xl-query() {
+          margin-left: 83px;
+          width: 378px;
+          height: 47px;
+          background-size: 226px;
+        }
+      }
+    }
+  }
+}

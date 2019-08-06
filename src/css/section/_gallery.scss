@@ -1,0 +1,109 @@
+#gallery {
+  background-image: linear-gradient(transparent, black);
+  padding-bottom: 100px;
+  @include m-query {
+    margin-top: 100px;
+    position: relative;
+  }
+  @include l-query {
+    padding-bottom: initial;
+    background-image: none;
+    color: $white;
+    margin: 171px auto 0px;
+  }
+  @include ll-query {
+    margin: 281px auto 0px;
+  }
+  @include xl-query {
+    margin: 153px auto 0px;
+  }
+  @include xxl-query {
+    margin: 653px auto 0px;
+  }
+  @include xxxl-query {
+    margin: 893px auto 0px;
+  }
+
+  h2 {
+    @include l-query {
+      margin-bottom: 11px;
+      background: url($image_url+"gallery_icon.png") no-repeat 1% 47%,
+        url($image_url+"gallery_icon_reverse.png") no-repeat 100% 48%;
+      padding: 0px 39px;
+      background-size: 20px;
+    }
+  }
+  p {
+    font-family: "MinionPro";
+    justify-content: center;
+    text-align: center;
+    font-size: 13px;
+    margin-bottom: 40px;
+    width: 90%;
+    line-height: 17px;
+
+    @include m-query {
+      width: initial;
+    }
+
+    @include l-query {
+      margin-bottom: initial;
+      margin-top: 0px;
+      width: 296px;
+    }
+  }
+  .galleryContainer {
+    width: 100%;
+    margin: 0px auto 36px;
+    @include l-query {
+      margin: 41px auto 36px;
+    }
+    .slick-slide {
+      margin: 13px;
+    }
+  }
+  .slider {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    @include l-query {
+      justify-content: space-between;
+      width: 342px;
+    }
+    @include ll-query {
+      padding: 2px 20px;
+    }
+
+    span {
+      width: 100px;
+      height: 20px;
+      display: block;
+    }
+    .arrow {
+      background: url($image_url+"gallery_arrow.png") no-repeat 0% 0%;
+      height: 55px;
+      width: 138px;
+      background-size: 105px;
+      cursor: pointer;
+    }
+    .right {
+      transform: scaleX(-1);
+    }
+    .counter {
+      display: flex;
+
+      div {
+        font-family: "MinionPro";
+        font-size: 14px;
+        color: $white;
+        &:nth-child(2) {
+          color: $selected;
+          margin: 0 5px;
+          font-size: 13px;
+        }
+      }
+    }
+  }
+}

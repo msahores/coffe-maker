@@ -1,0 +1,19 @@
+@import "base/reset";
+
+@import "base/vars";
+@import "base/colors";
+@import "base/mixins";
+@import "base/fonts";
+
+@import "libs/slick";
+
+@import "layout/global";
+@import "layout/header";
+@import "layout/footer";
+
+@import "section/intro";
+@import "section/programs";
+@import "section/gallery";
+@import "section/testimonials";
+@import "section/partners";
+@import "section/questions";

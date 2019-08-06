@@ -1,0 +1,121 @@
+#partners {
+  margin-top: 132px;
+  position: relative;
+  @include l-query {
+    margin-top: 175px;
+  }
+  @include xxl-query {
+    margin-top: 288px;
+  }
+  @include xxxl-query {
+    margin-top: 371px;
+  }
+  h2 {
+    background: url($image_url+"partner_icon_reverse.png") no-repeat 0% 50%,
+      url($image_url+"partner_icon.png") no-repeat 100% 50%;
+    background-size: 19px;
+    padding: 31px 52px 0px;
+
+    @include m-query {
+      background-position-y: 22px;
+      background-size: 24px;
+      padding: 0px 62px;
+      margin-bottom: 0px;
+    }
+    &:after {
+      margin: 30px auto 0px auto;
+      height: 1px;
+      display: block;
+      width: 200px;
+      background: #808080;
+      content: "";
+      @include m-query {
+        margin-bottom: 50px;
+      }
+      @include l-query {
+        margin-top: 18px;
+        width: 170px;
+      }
+    }
+  }
+  @mixin arrow {
+    $size: 60px;
+    width: $size;
+    height: $size;
+    background: url($image_url+"arrow_grey.png") no-repeat 50%;
+    background-size: 11%;
+    position: absolute;
+    top: 255px;
+    @include l-query {
+      top: 166.5px;
+    }
+    cursor: pointer;
+  }
+  .before {
+    @include arrow();
+    left: 10px;
+    @include m-query {
+      left: 60px;
+    }
+    @include ll-query {
+      left: 190px;
+    }
+    @include xl-query {
+      left: 246px;
+    }
+  }
+  .after {
+    @include arrow();
+    transform: scaleX(-1);
+    right: 10px;
+    @include m-query {
+      right: 60px;
+    }
+    @include ll-query {
+      right: 199px;
+    }
+    @include xl-query {
+      right: 246px;
+    }
+  }
+  #slider {
+    $size: 60px;
+    width: 203px;
+    justify-content: space-around;
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-flow: wrap;
+    margin-top: 14px;
+
+    @include m-query {
+      width: 500px;
+      padding: 20px;
+    }
+    @include l-query {
+      padding: 0px;
+      height: $size;
+      flex-flow: nowrap;
+      width: 753px;
+    }
+    img {
+      width: initial !important;
+      padding: 6px;
+      margin: 11px 0;
+      @include m-query {
+        padding: 23px;
+      }
+      @include l-query {
+        padding: initial;
+      }
+    }
+    .slick-slide {
+      margin: 32px;
+    }
+
+    .slick-track {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

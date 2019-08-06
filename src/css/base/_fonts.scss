@@ -1,0 +1,31 @@
+@include font(
+  "IntroRust",
+  "~../assets/fonts/IntroRustG-Base2Line/IntroRustG-Base2Line",
+  null,
+  null,
+  woff ttf eot otf
+);
+
+@include font(
+  "Intro",
+  "~../assets/fonts/Intro/Intro",
+  null,
+  null,
+  woff ttf eot otf svg
+);
+
+@include font(
+  "MinionPro",
+  "~../assets/fonts/MinionPro/MinionPro",
+  null,
+  null,
+  woff ttf eot otf svg
+);
+
+@include font(
+  "PlayFairDisplay",
+  "~../assets/fonts/PlayfairDisplay/PlayfairDisplay",
+  null,
+  null,
+  woff ttf eot svg
+);

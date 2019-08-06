@@ -1,0 +1,108 @@
+html,
+body {
+  overflow-x: hidden;
+  @include l-query {
+    overflow-x: initial;
+  }
+}
+
+body {
+  position: relative;
+  font-size: 16px;
+  overflow-x: hidden;
+
+  background: url($image_url+"header-bg.jpg") no-repeat top,
+    url($image_url+"bg-clear-grain.jpg") repeat;
+  background-size: contain initial;
+
+  @include l-query {
+    background: url($image_url+"full-bg.jpg") no-repeat;
+    background-size: cover;
+  }
+  @include xl-query {
+    background-size: contain;
+    background-color: black
+  }
+  @include xl2-query {
+    background-size: cover;
+    background-color: initial;
+  }
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1,
+h2 {
+  font-family: "IntroRust";
+  text-transform: uppercase;
+  text-align: center;
+  margin: 2rem;
+}
+
+h1 {
+  font-size: 2em;
+  @include m-query {
+    font-size: 2.8rem;
+  }
+  @include l-query {
+    font-size: 43.58px;
+  }
+}
+h2 {
+  font-size: 34px;
+  @include m-query {
+    font-size: 2.6rem;
+  }
+  @include l-query {
+    font-size: 37.9px;
+    line-height: 3.5rem;
+  }
+}
+h3 {
+  font-size: 1.4rem;
+  @include m-query {
+    font-size: 2.2rem;
+  }
+}
+h4 {
+  font-size: 13px;
+  @include m-query {
+    font-size: 2rem;
+  }
+}
+h5 {
+  font-size: 1.2rem;
+  @include m-query {
+    font-size: 1.5rem;
+  }
+}
+h6 {
+  font-size: 1rem;
+  @include m-query {
+    font-size: 1.1rem;
+  }
+}
+
+p {
+  font-size: 0.9rem;
+  @include m-query {
+    font-size: 1rem;
+  }
+}
+
+.noScroll {
+  overflow: hidden;
+  @include l-query {
+    overflow: initial;
+  }
+}
+
+#separator{
+  background-color: red;
+  opacity: 0.4;;
+}

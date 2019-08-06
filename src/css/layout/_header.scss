@@ -1,0 +1,211 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "Intro";
+  height: 100px;
+  padding: 30px;
+
+  @include m-query {
+    padding: 0px;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  @include l-query {
+    height: 76px;
+  }
+  @include ll-query {
+    height: 100px;
+  }
+
+  .logoContainer {
+    width: 50%;
+    height: 100%;
+    @include m-query {
+      width: 100%;
+      position: absolute;
+      height: initial;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      top: 13px;
+      left: 0;
+    }
+    @include l-query {
+      top: 0px;
+    }
+    @mixin line {
+      top: 56px;
+      height: 2px;
+      background-color: $white-alpha;
+      position: absolute;
+      content: "";
+
+      @include l-query {
+        top: 75px;
+      }
+    }
+    &:before {
+      @include m-query {
+        @include line();
+        width: 24px;
+      }
+    }
+    &:after {
+      @include m-query {
+        @include line();
+        width: 100%;
+        left: 244px;
+      }
+      @include l-query {
+        left: 252px;
+      }
+    }
+    #logo {
+      height: 100%;
+      @include m-query {
+        position: absolute;
+        height: initial;
+        top: 0px;
+        left: 30px;
+      }
+      @include l-query {
+        top: 17px;
+        left: 33px;
+      }
+    }
+  }
+  #menu {
+    display: flex;
+    // transform: translateX(100%);
+    transform: translateX(100%);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    z-index: 1000;
+    font-family: "IntroRust";
+    background-color: $black-low-alpha;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+
+    @include l-query {
+      display: block;
+      transform: translateX(0%);
+      position: initial;
+      width: initial;
+      height: initial;
+      background-color: initial;
+      z-index: initial;
+      margin-right: 70px;
+    }
+    @include ll-query {
+      margin: 0px 90px 26px 0px;
+    }
+    a {
+      position: relative;
+      font-weight: bold;
+      text-decoration: none;
+      color: $white;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+
+      @include l-query {
+        margin-right: 2rem;
+        padding-bottom: 30px;
+        margin-right: 67px;
+        font-size: 9.47px;
+      }
+      @include ll-query {
+        padding-bottom: 31px;
+        margin-right: 50px;
+        width: 41px;
+        height: 0px;
+      }
+
+      &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+        @include l-query {
+          opacity: 1;
+          border-bottom: 2px solid $selected;
+        }
+      }
+
+      &:after {
+        @include l-query {
+          width: 4px;
+          height: 4px;
+          background-color: $white;
+          position: absolute;
+          right: -33px;
+          top: 5px;
+          border-radius: 5px;
+          content: "";
+        }
+        @include ll-query {
+          width: 3px;
+          height: 3px;
+          right: -34px;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+        &:after {
+          content: initial;
+        }
+      }
+    }
+    .active {
+      color: $selected;
+    }
+  }
+  .phone {
+    display: none;
+    @include ll-query {
+      display: block;
+      color: $white;
+      margin-right: 31px;
+      font-size: 19.46px;
+      margin-bottom: 20px;
+    }
+    @include xl-query {
+    }
+  }
+  .burger {
+    margin-right: 20px;
+    @include l-query {
+      margin: 2rem;
+    }
+    div {
+      width: 30px;
+      height: 2px;
+      background-color: $white;
+      margin: 5px;
+      border-radius: 5px;
+    }
+    &:hover {
+      cursor: pointer;
+    }
+    @include l-query {
+      display: none;
+    }
+  }
+}
+
+.moveLeft {
+  transform: translateX(0%) !important;
+}
+
+.withTransition {
+  transition: transform 0.5s ease-in;
+  @include l-query {
+    transition: none;
+  }
+}

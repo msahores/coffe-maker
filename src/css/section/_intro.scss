@@ -1,0 +1,140 @@
+#intro {
+  display: flex;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: $white;
+
+  justify-content: space-around;
+  height: 440px;
+
+  @include m-query {
+    justify-content: space-between;
+    height: 344px;
+    margin-top: 160px;
+  }
+
+  @include l-query {
+    margin-top: 75px;
+  }
+  @include ll-query {
+    margin-top: 0px;
+    height: 392px;
+  }
+  @include xxl-query {
+    margin-top: 140px;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    @include l-query {
+      width: 50%;
+      position: relative;
+    }
+    @include ll-query {
+      width: 100%;
+      height: 100%;
+    }
+
+    .first {
+      background: url($image_url+"intro-star.png") 50% 10% no-repeat;
+      padding-top: 50px;
+      background-size: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include m-query {
+        background-size: 96px;
+        font-size: 1.2em;
+      }
+      @include l-query {
+        display: block;
+        background-size: initial;
+        background-position-y: 15px;
+        font-size: 15px;
+      }
+      @include ll-query {
+        position: absolute;
+        top: 46px;
+      }
+      @mixin intro-arrow() {
+        background: url($image_url+"intro-arrow.png") no-repeat;
+        background-position: 0px 6px;
+        width: 33px;
+        height: 11px;
+        background-size: 22px;
+        @include m-query {
+          background-size: initial;
+          background-position: initial;
+          width: 175px;
+          height: 10px;
+        }
+        @include l-query {
+          width: 135px;
+          height: 7px;
+        }
+        display: inline-block;
+        content: "";
+      }
+      &:before {
+        @include intro-arrow();
+      }
+      &:after {
+        @include intro-arrow();
+        transform: scaleX(-1);
+      }
+    }
+    h1 {
+      @include m-query {
+        margin-top: 55px;
+      }
+      @include ll-query {
+        top: 149px;
+        margin: 0;
+        position: absolute;
+      }
+      span {
+        color: $selected;
+      }
+    }
+
+    h4 {
+      background: url($image_url+"intro-separator.png") 50% 60% no-repeat;
+      padding-bottom: 100px;
+      background-size: 100px;
+      @include m-query {
+        background-size: 150px;
+        padding-bottom: 117px;
+        font-size: 1.45em;
+        margin-top: 18px;
+      }
+      @include l-query {
+        background-position-y: 42px;
+        background-size: initial;
+        padding-bottom: 50px;
+        font-size: 17.8px;
+        margin: 0;
+      }
+      @include ll-query {
+        bottom: 95px;
+        position: absolute;
+      }
+    }
+
+    a {
+      display: none;
+      position: absolute;
+      @include l-query {
+        bottom: -83px;
+        display: block;
+      }
+      @include ll-query {
+        bottom: 0px;
+      }
+    }
+  }
+}
